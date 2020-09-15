@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PmaService } from './pma.service';
+import { userModel } from './userModel';
 import * as moment from 'moment';
 import { interval, Subscription } from 'rxjs';
 
@@ -14,6 +15,7 @@ export class AppComponent implements OnInit {
   title = 'performance-management';
   sidebarOpen = true;
   profileOpened = false;
+  user:userModel;
 
   subscription: Subscription;
   counter: string;
@@ -44,8 +46,11 @@ export class AppComponent implements OnInit {
     this.counter = `${d}days ${hr}h ${m}m ${s}s`;
   }
 
-  //calls timer function and updates countdown every once second
   ngOnInit() {
+    //initialize user
+    this.user = this.pmaService.getUser();
+
+    //calls timer function and updates countdown every once second
     const currStage = this.pmaService.getCurrStageEndTime();
     this.currStageName = currStage.name;
     const endDate = moment(currStage.endDate);

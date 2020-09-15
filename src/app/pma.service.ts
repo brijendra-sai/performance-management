@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { stageModel } from './stageModel';
+import { userModel } from './userModel';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PmaService {
   constructor() {}
+
+  user: userModel = {name: 'Brijendra'};
 
   stageList: stageModel[] = [
     {
@@ -71,6 +74,10 @@ export class PmaService {
       progress: 'Yet to start',
     },
   ];
+
+  getUser(): userModel {
+    return this.user;
+  }
 
   getStageList(): stageModel[] {
     return this.stageList;

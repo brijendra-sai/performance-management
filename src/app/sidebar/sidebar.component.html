@@ -21,7 +21,7 @@
           <li *ngFor="let task of stage.taskList" [ngClass]="{'incomplete': !task.isDone}"> <span
               class="material-icons">
               fiber_manual_record
-            </span> {{ task.title }}</li>
+            </span> <a>{{ task.title }}</a></li>
         </ul>
       </li>
     </ul>
