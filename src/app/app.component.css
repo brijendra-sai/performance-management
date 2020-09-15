@@ -1,0 +1,79 @@
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 20px;
+  color: rgb(33, 78, 111);
+  box-shadow: 0 2px 3px rgba(172, 171, 171, 0.61);
+  background-color: white;
+}
+
+header > * {
+  padding: 10px;
+  position: relative;
+}
+
+.person {
+  font-size: 35px;
+}
+
+h3 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 19px;
+}
+
+.stopwatch {
+  margin: 0 25px;
+}
+
+.stopwatch > span {
+  float: right;
+  padding: 7px 2px;
+}
+.stopwatch > div {
+  font-weight: bold;
+  float: left;
+  font-size: 14px;
+}
+
+.material-icons {
+  font-weight: bold;
+}
+
+app-sidebar {
+  float: left;
+}
+
+.stopwatch {
+  margin-left: auto;
+}
+
+.icon {
+  height: 10px;
+}
+
+.toggle {
+  cursor: pointer;
+}
+
+.dropdown {
+  position: absolute;
+  background: white;
+  top: 50px;
+  right: 0;
+  box-shadow: 2px 0 5px rgba(122, 122, 122, 0.733);
+  padding: 0;
+  width: 130px;
+}
+
+.dropdown ul {
+  list-style: none;
+  cursor: pointer;
+}
+.dropdown ul li {
+  padding: 10px;
+}
+.dropdown hr {
+  height: 2px;
+}

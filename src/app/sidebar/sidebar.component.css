@@ -1,0 +1,62 @@
+.container {
+  padding: 28px;
+  background: linear-gradient(to bottom, #204c6c 0%, #4f90c0 100%);
+  color: #fff;
+  width: 370px;
+}
+
+.incomplete {
+  color: rgba(255, 255, 255, 0.507);
+}
+
+hr {
+  margin: 14px 0;
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgb(128, 155, 175);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+.icon > label {
+  padding: 10px;
+}
+
+.stage {
+  display: flex;
+  align-items: center;
+  padding: 20px 0 5px 0;
+}
+
+.stage span {
+  margin: 0 2px 0 10px;
+  font-size: 16px;
+}
+
+.task-list {
+  padding-left: 22px;
+  list-style-type: none;
+}
+
+.task-list li {
+  margin: 10px;
+  margin-left: 0;
+  display: flex;
+  align-items: center;
+}
+
+.task-list li span {
+  font-size: 17px;
+  margin: 0 8px;
+}
+
+.stage-list {
+  list-style-type: none;
+}
+
+ul {
+  list-style-position: inside;
+}

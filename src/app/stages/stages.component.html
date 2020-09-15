@@ -1,0 +1,17 @@
+<div class="container">
+  <h3>Dashboard</h3>
+  <div class="stages-container">
+    <div class="stage" *ngFor="let stage of stageList">
+      <div>
+        <h4>{{ stage.name }}</h4>
+      </div>
+      <div class="task-container" [ngClass]="{'yts':stage.progress ==='Yet to start'}">
+        <div *ngFor="let task of stage.taskList">{{ task.title }}</div>
+      </div>
+      <span>{{durationString(stage)}}</span>
+      <div class="prog-circle" [ngClass]="{'yts':stage.progress ==='Yet to start'}"></div>
+      <hr class="progressed" [ngClass]="{'yts':stage.progress ==='Yet to start'}" />
+      <hr class="inp" *ngIf="stage.progress ==='InProgress'" />
+    </div>
+  </div>
+</div>

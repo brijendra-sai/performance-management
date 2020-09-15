@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="icon">
+    <span class="material-icons"> dashboard </span><label>Dashboard</label>
+  </div>
+  <hr />
+  <div class="icon">
+    <span class="material-icons"> language </span><label>Appraisal</label>
+  </div>
+  <div class="stage-list-container">
+    <ul class="stage-list">
+      <li *ngFor="let stage of stageList">
+        <div class="stage" [ngClass]="{'incomplete': stage.progress === 'Yet to start'}">
+          <label>{{ stage.name }}</label>
+          <span class="material-icons"> schedule </span>
+          <label>
+            <i *ngIf="stage.progress !== 'InProgress'">{{ durationString(stage) }}</i>
+            <i *ngIf="stage.progress === 'InProgress'">{{ counter }}</i>
+          </label>
+        </div>
+        <ul class="task-list">
+          <li *ngFor="let task of stage.taskList" [ngClass]="{'incomplete': !task.isDone}"> <span
+              class="material-icons">
+              fiber_manual_record
+            </span> {{ task.title }}</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <hr />
+  <div class="icon">
+    <span class="material-icons"> history </span><label>Previous Appraisal</label>
+  </div>
+</div>
