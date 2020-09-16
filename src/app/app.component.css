@@ -9,7 +9,7 @@ header {
 }
 
 header > * {
-  padding: 10px;
+  padding: 5px;
   position: relative;
 }
 
@@ -20,7 +20,7 @@ header > * {
 h3 {
   margin: 0;
   font-weight: bold;
-  font-size: 19px;
+  font-size: 16px;
 }
 
 .stopwatch {
@@ -34,7 +34,7 @@ h3 {
 .stopwatch > div {
   font-weight: bold;
   float: left;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .material-icons {

@@ -4,13 +4,13 @@
 }
 
 h3 {
-  font-size: 19px;
-  margin: 7px 40px;
+  font-size: 16px;
+  margin: 5px 40px;
   font-weight: bold;
 }
 
 h4 {
-  font-size: 18px;
+  font-size: 17px;
   margin: 7px 40px;
   font-weight: bold;
 }
@@ -19,12 +19,13 @@ h4 {
   background-color: #fff;
   display: flex;
   flex-wrap: wrap;
-  padding: 40px;
+  padding: 34px;
+  padding-top: 26px;
 }
 
 .stage {
   flex: 1 0 21%;
-  padding: 20px;
+  padding: 27px;
   padding-bottom: 40px;
   text-align: center;
   display: flex;
@@ -36,14 +37,14 @@ h4 {
 .task-container {
   background-color: rgb(33, 78, 111);
   color: rgb(243, 243, 243);
-  height: 120px;
+  height: 100px;
   width: 100%;
   max-width: 300px;
   padding: 10px;
 }
 
 .task-container div {
-  padding: 10px;
+  padding: 6px;
 }
 
 .task-container.yts {
@@ -57,11 +58,11 @@ h4 {
 }
 
 .prog-circle {
-  height: 30px;
-  width: 30px;
+  height: 28px;
+  width: 28px;
   background-color: #fff;
   border: 7px solid rgb(33, 78, 111);
-  border-radius: 15px;
+  border-radius: 14px;
   z-index: 1;
 }
 
@@ -75,8 +76,8 @@ hr {
 
 hr.progressed {
   position: absolute;
-  border-top: 10px solid rgb(33, 78, 111);
-  bottom: 49px;
+  border-top: 7px solid rgb(33, 78, 111);
+  bottom: 51px;
   width: 100%;
 }
 
@@ -86,8 +87,8 @@ hr.yts {
 
 hr.inp {
   position: absolute;
-  border-top: 10px solid rgb(223, 223, 223);
-  bottom: 49px;
+  border-top: 7px solid rgb(223, 223, 223);
+  bottom: 51px;
   right: 0;
   width: 35%;
 }
