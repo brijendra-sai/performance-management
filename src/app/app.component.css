@@ -49,6 +49,10 @@ app-sidebar {
   margin-left: auto;
 }
 
+.completed {
+  color: rgb(50, 114, 50);
+}
+
 .icon {
   height: 10px;
 }

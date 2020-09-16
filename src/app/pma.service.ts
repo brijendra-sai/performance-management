@@ -8,8 +8,10 @@ import { userModel } from './userModel';
 export class PmaService {
   constructor() {}
 
+  //User details(mock of api)
   user: userModel = {name: 'Brijendra'};
 
+  //stages details (mock  of api)
   stageList: stageModel[] = [
     {
       name: 'Stage 1',
@@ -75,14 +77,17 @@ export class PmaService {
     },
   ];
 
+  //returns user object
   getUser(): userModel {
     return this.user;
   }
 
+  //returns stages list
   getStageList(): stageModel[] {
     return this.stageList;
   }
 
+  //returns curr stage if any otherwise undefined
   getCurrStageEndTime(): stageModel {
     return this.stageList.find((stage) => stage.progress == 'InProgress');
   }

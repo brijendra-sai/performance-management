@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PmaService } from '../pma.service';
 import { stageModel } from '../stageModel';
 import * as moment from 'moment';
@@ -10,7 +10,7 @@ import * as moment from 'moment';
 })
 export class SidebarComponent implements OnInit {
   stageList: stageModel[];
-  counter: string = '5d:4h:3m:34s';
+  @Input() timer: number[];
 
   constructor(private pmaService: PmaService) {}
 
@@ -19,8 +19,10 @@ export class SidebarComponent implements OnInit {
     this.stageList = this.pmaService.getStageList();
   }
 
-  //Returns stage duration as formatted string
+  //Returns stage duration/timer as a formatted string
   durationString(stage: stageModel): string {
+    if (stage.progress === 'InProgress')
+      return `${this.timer[0]}d:${this.timer[1]}h:${this.timer[2]}m:${this.timer[3]}s`;
     return `${moment(stage.startDate).format('Do MMM')} - ${moment(
       stage.endDate
     ).format('Do MMM')}`;
