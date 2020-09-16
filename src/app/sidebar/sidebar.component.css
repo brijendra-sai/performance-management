@@ -3,7 +3,24 @@
   background: linear-gradient(to bottom, #204c6c 0%, #4f90c0 100%);
   color: #fff;
   width: 320px;
+  height: 90vh;
+  overflow-y: auto;
 }
+
+/* Scrollbar */
+*::-webkit-scrollbar {
+  height: 7px;
+  width: 7px;
+}
+*::-webkit-scrollbar-track {
+  background: rgba(117, 133, 132, 0.432);
+  box-shadow: -1px -1px 1px rgba(128, 128, 128, 0.404);
+}
+*::-webkit-scrollbar-thumb {
+  background-color:  rgba(33,78,111);
+  border-radius: 4px;
+}
+
 
 .incomplete {
   color: rgba(255, 255, 255, 0.507);
