@@ -1,3 +1,4 @@
+<!-- Sidebar -->
 <div class="container">
   <div class="icon">
     <span class="material-icons"> dashboard </span><label>Dashboard</label>
@@ -17,6 +18,7 @@
             <i>{{ durationString(stage) }}</i>
           </label>
         </div>
+        <!-- Task list -->
         <ul class="task-list">
           <li *ngFor="let task of stage.taskList" [ngClass]="{'incomplete': stage.progress==='Yet to start'}"> <span
               class="material-icons">

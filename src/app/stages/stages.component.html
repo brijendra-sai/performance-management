@@ -1,5 +1,7 @@
+<!-- Dashboard -->
 <div class="container">
-  <h3>Dashboard</h3>
+  <div class="h3-container"><h3>Dashboard</h3></div>
+  
   <!-- Stages container -->
   <div class="stages-container">
     <!-- Stages -->
@@ -11,6 +13,7 @@
         <div *ngFor="let task of stage.taskList">{{ task.title }}</div>
       </div>
       <span>{{durationString(stage)}}</span>
+      <!-- Progress bar -->
       <div class="prog-circle" [ngClass]="{'yts':stage.progress ==='Yet to start'}"></div>
       <hr class="progressed" [ngClass]="{'yts':stage.progress ==='Yet to start'}" />
       <hr class="inp" *ngIf="stage.progress ==='InProgress'" />

@@ -64,9 +64,9 @@ app-sidebar {
 .dropdown {
   position: absolute;
   background: white;
-  top: 50px;
+  top: 43px;
   right: 0;
-  box-shadow: 2px 0 5px rgba(122, 122, 122, 0.733);
+  box-shadow: 2px 0 5px rgba(122, 122, 122, 0.733), 0 0 1px rgba(0, 0, 0, 0.219);
   padding: 0;
   width: 130px;
 }

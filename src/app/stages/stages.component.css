@@ -9,6 +9,10 @@ h3 {
   font-weight: bold;
 }
 
+.h3-container {
+  display:flex;
+}
+
 h4 {
   font-size: 17px;
   margin: 7px 40px;

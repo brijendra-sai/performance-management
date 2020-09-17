@@ -87,7 +87,7 @@ export class PmaService {
     return this.stageList;
   }
 
-  //returns curr stage if any otherwise undefined
+  //returns curr stage if any, otherwise undefined
   getCurrStageEndTime(): stageModel {
     return this.stageList.find((stage) => stage.progress == 'InProgress');
   }
