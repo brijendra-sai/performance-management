@@ -34,6 +34,7 @@ export class AppComponent implements OnInit {
 
   //returns remaining time till endDate
   timer(endDate) {
+    endDate = moment(endDate).add(1, 'days')
     var curr = moment();
     var d: any = endDate.diff(curr, 'days');
     if (d === 0) {
