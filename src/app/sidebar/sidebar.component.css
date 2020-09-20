@@ -1,10 +1,18 @@
 .container {
-  padding: 28px;
+  padding: 25px 5px 25px 25px;
   background: linear-gradient(to bottom, #204c6c 0%, #4f90c0 100%);
   color: #fff;
-  width: 320px;
+  width: 300px;
   height: 90vh;
+  height: calc(100vh - 62px);
   overflow-y: auto;
+}
+
+@media (max-width:900px){
+  .container{
+    padding: 15px;
+    width: auto;
+  }
 }
 
 /* Scrollbar */
@@ -17,10 +25,9 @@
   box-shadow: -1px -1px 1px rgba(128, 128, 128, 0.404);
 }
 *::-webkit-scrollbar-thumb {
-  background-color:  rgba(33,78,111);
+  background-color: rgba(33, 78, 111);
   border-radius: 4px;
 }
-
 
 .incomplete {
   color: rgba(255, 255, 255, 0.507);
@@ -65,7 +72,7 @@ hr {
 }
 
 .task-list li span {
-  font-size: 17px;
+  font-size: 16px;
   margin: 0 8px;
 }
 
