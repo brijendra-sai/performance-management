@@ -1,0 +1,102 @@
+$primary-color: #5e6a70;
+$secondary-color: #eb7508;
+$background-color: rgb(238, 238, 238);
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+  color: $primary-color;
+  background-color: $background-color;
+  margin: -24px;
+  border: 24px solid $background-color;
+
+  //header
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    h1 {
+      font-size: 18px;
+    }
+
+    mat-icon {
+      cursor: pointer;
+    }
+  }
+
+  //For each form control
+  .form-control {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 25px;
+
+    //Form labels
+    label {
+      margin: 4px 0;
+    }
+
+    //Form Fields
+    input,
+    select {
+      color: $primary-color;
+      font-size: 16px;
+      border: 0;
+      border-radius: 5px;
+      height: 30px;
+      padding: 5px 15px 3px 15px;
+    }
+
+    //Error Message
+    small {
+      visibility: hidden;
+      position: absolute;
+      bottom: -20px;
+      color: rgba(255, 0, 0, 0.7);
+      font-family: inherit;
+    }
+  }
+
+  //Form control with error
+  .error {
+    label {
+      color: rgba(255, 0, 0, 0.7);
+    }
+
+    small {
+      visibility: visible;
+    }
+  }
+
+  //Action Buttons
+  .mat-dialog-actions {
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    button {
+      background-color: $secondary-color;
+      border: 0;
+      border-radius: 3px;
+      padding: 8px 22px;
+      color: white;
+      margin-left: 25px;
+      cursor: pointer;
+    }
+
+    //Submit button when form has error
+    button:disabled {
+      background-color: #4f5355e0;
+      color: rgb(163, 163, 163);
+      cursor: no-drop;
+    }
+
+    //Cancel button
+    .cancel {
+      background-color: $primary-color;
+    }
+  }
+}

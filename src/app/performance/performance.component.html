@@ -1,0 +1,36 @@
+<!-- Header -->
+<header>
+    <span class="material-icons toggle" (click)="toggleSidebar()"> menu </span>
+    <h3>Performance Management Application</h3>
+    <!-- Stopwatch -->
+    <div class="stopwatch" [ngClass]="{ completed: !currStageName }">
+      <div *ngIf="currStageName">
+        {{ counter }}<br />
+        {{ currStageName }} compilation
+      </div>
+      <span class="material-icons"> timer </span>
+    </div>
+  
+    <span>Hi, {{ user.name }} </span>
+    <div>
+      <span class="material-icons person toggle" (click)="toggleDropdown()">
+        person
+      </span>
+  
+      <!-- Profile dropdown -->
+      <div class="dropdown" *ngIf="profileOpened">
+        <ul>
+          <li>View profile</li>
+          <hr />
+          <li><a routerLink="/" >Log out</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Body -->
+  <body>
+    <app-sidebar *ngIf="sidebarOpen" [timer]="sidebarTimer"></app-sidebar>
+    <app-stages></app-stages>
+  </body>
+  

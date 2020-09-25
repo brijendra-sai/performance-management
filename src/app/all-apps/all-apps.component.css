@@ -1,0 +1,31 @@
+/* Homepage Body*/
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(209, 235, 227, 0.527);
+}
+
+/* Hover animation for buttons */
+
+button {
+    color: #7e4e3f;
+    background-color: #fff;
+    box-shadow: 2px 2px 10px rgb(0, 0, 0, 0.5);
+    border-radius: 4px;
+    border: 0;
+    margin: 30px;
+    text-align: center;
+    padding: 35px;
+    width: 500px;
+    line-height: 40px;
+    font-size: 35px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+button:hover{
+    background-color:rgb(248, 252, 250);
+    transform: scale(1.15)
+  }

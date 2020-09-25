@@ -1,0 +1,44 @@
+<!-- User Form Dialog -->
+<main>
+  <header>
+    <h1 mat-dialog-title><strong>Add User</strong></h1>
+    <mat-icon (click)="onNoClick()">close</mat-icon>
+  </header>
+
+  <!-- User Form -->
+  <form class="form" id="userForm" name="userForm" [formGroup]="userForm">
+    <!-- Name field -->
+    <div class="form-control" [ngClass]="{'error': userForm.get('name').touched && userForm.get('name').invalid}">
+      <label for="name">Name</label>
+      <input id="name" formControlName="name" placeholder="Enter Name">
+      <small *ngIf="userForm.get('name').hasError('required')">Name is Required field</small>
+      <small *ngIf="userForm.get('name').hasError('minlength')">Name should be of at least 3 char
+        length</small>
+      <small *ngIf="userForm.get('name').hasError('maxlength')">Name should be of at most 60 char
+        length</small>
+    </div>
+    <!-- Email field -->
+    <div class="form-control" [ngClass]="{'error': userForm.get('email').touched && userForm.get('email').invalid}">
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email" placeholder="Enter Email">
+      <small>Enter a valid email address</small>
+    </div>
+    <!-- Role Select -->
+    <div class="form-control" [ngClass]="{'error': userForm.get('role').touched && userForm.get('role').invalid}">
+      <label for="email">Role</label>
+      <select formControlName="role">
+        <option [ngValue]="null" disabled>Choose a role</option>
+        <option *ngFor="let role of roles" [ngValue]="role">
+          {{ role }}
+        </option>
+      </select>
+      <small>Role is a required field</small>
+    </div>
+    <!-- Action Buttons -->
+    <div mat-dialog-actions>
+      <button mat-button (click)="onNoClick()" class="cancel">Cancel</button>
+      <button mat-button [mat-dialog-close]="userForm.value" cdkFocusInitial
+        [disabled]="userForm.invalid">{{formAction}}</button>
+    </div>
+  </form>
+</main>

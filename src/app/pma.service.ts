@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { stageModel } from './stageModel';
-import { userModel } from './userModel';
+import { userModel } from './userNameModel';
 
 @Injectable({
   providedIn: 'root',

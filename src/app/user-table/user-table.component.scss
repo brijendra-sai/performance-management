@@ -1,0 +1,193 @@
+$primary-color: #5E6A70;
+$secondary-color: #eb7508;
+$background-color: rgb(238, 238, 238);
+
+//page margin
+.table-container,
+mat-paginator,
+header {
+  margin: 0 10px;
+}
+
+//Header
+header {
+  display: flex;
+  padding-top: 20px;
+  justify-content: space-between;
+  color: $primary-color;
+
+  h1 {
+    font-size: 20px;
+  }
+
+  button {
+    background-color: $secondary-color;
+    color: white;
+    height: 28px;
+    padding: 2px 8px;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    span {
+      font-size: 17px;
+      margin-right: 5px;
+    }
+  }
+}
+
+//Filter
+.mat-form-field {
+  position: relative;
+  margin-bottom: 5px;
+  width: 200px !important;
+  margin-left: calc(100% - 210px) !important;
+  background-color: white;
+  border-radius: 5px;
+  padding: 8px 15px 2px 15px;
+  color: $primary-color;
+  font-size: 17px;
+
+  &::ng-deep .mat-form-field-wrapper {
+    margin: -1.35em 0;
+  }
+
+  span {
+    position: absolute;
+    right: 0;
+  }
+}
+
+//Table Container
+.table-container {
+  max-height: 500px;
+  overflow: auto;
+
+
+  /* Scrollbar */
+  &::-webkit-scrollbar {
+    height: 7px;
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(117, 133, 132, 0.432);
+    box-shadow: -1px -1px 1px rgba(105, 112, 117, 0.404);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #3a3f42;
+    border-radius: 4px;
+  }
+
+}
+
+//table
+table {
+  width: 100%;
+  background-color: $background-color;
+
+  .mat-header-row {
+    background-color: $primary-color !important;
+
+    .mat-header-cell {
+      font-size: 19px;
+      color: white !important;
+      padding: 20px 0;
+      background-color: $primary-color !important;
+    }
+  }
+
+  //Adjusting column widths
+  td,
+  th {
+    &:first-child {
+      width: 28%;
+      padding-left: 7% !important;
+    }
+
+    &:nth-child(2) {
+      width: 35%
+    }
+
+    &:nth-child(3) {
+      width: 20%
+    }
+
+    &:last-child {
+      width: 10%
+    }
+  }
+
+  //Row borders
+  td.mat-cell,
+  th.mat-header-cell {
+    padding: 12px 0;
+    background-color: white;
+    border-bottom: 3px solid $background-color;
+    border-top: 3px solid $background-color;
+
+    &:first-child {
+      border-radius: 10px 0 0 10px;
+    }
+
+    &:last-child {
+      border-radius: 0 10px 10px 0;
+    }
+  }
+
+  .mat-row {
+    padding: 10px;
+
+    .mat-icon {
+      margin-right: 20px;
+      cursor: pointer;
+    }
+
+    .mat-cell {
+      font-size: 17px;
+      color: $primary-color !important;
+    }
+  }
+}
+
+//paginator
+mat-paginator {
+  background-color: $background-color;
+  color: white;
+  font-size: 14px;
+
+  &::ng-deep .mat-paginator-outer-container {
+    background-color: $primary-color;
+    border-top: 5px solid $background-color;
+    border-radius: 10px;
+  }
+
+  &::ng-deep .mat-form-field-outline {
+    color: white !important;
+  }
+
+  &::ng-deep .mat-form-field-infix {
+    font-size: 8px !important;
+    padding: 4px 0 4px 0 !important;
+  }
+
+  &::ng-deep .mat-select-trigger {
+    font-size: 16px;
+    color: white !important;
+  }
+
+  &::ng-deep .mat-select-value {
+    color: white !important;
+  }
+
+  &::ng-deep .mat-form-field-wrapper {
+    padding-bottom: 0;
+  }
+
+  &::ng-deep .mat-select-arrow {
+    color: white !important;
+  }
+}
