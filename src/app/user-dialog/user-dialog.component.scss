@@ -49,6 +49,11 @@ main {
       padding: 5px 15px 3px 15px;
     }
 
+    //Email Input
+    input[type=email] {
+      width: calc(100% - 100px)
+    }
+
     //Error Message
     small {
       visibility: hidden;
@@ -57,6 +62,31 @@ main {
       color: rgba(255, 0, 0, 0.7);
       font-family: inherit;
     }
+  }
+
+  //Buttons
+  button {
+    background-color: $secondary-color;
+    border: 0;
+    border-radius: 3px;
+    padding: 8px 22px;
+    color: white;
+    margin-left: 25px;
+    cursor: pointer;
+  }
+
+  //Disabled Buttons
+  button:disabled {
+    background-color: #4f5355e0;
+    color: rgb(163, 163, 163);
+    cursor: no-drop;
+  }
+
+  //Validate Button
+  button.validate {
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 
   //Form control with error
@@ -76,23 +106,6 @@ main {
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
-
-    button {
-      background-color: $secondary-color;
-      border: 0;
-      border-radius: 3px;
-      padding: 8px 22px;
-      color: white;
-      margin-left: 25px;
-      cursor: pointer;
-    }
-
-    //Submit button when form has error
-    button:disabled {
-      background-color: #4f5355e0;
-      color: rgb(163, 163, 163);
-      cursor: no-drop;
-    }
 
     //Cancel button
     .cancel {

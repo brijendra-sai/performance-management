@@ -90,6 +90,7 @@ export class UserTableComponent implements OnInit {
       this.initializeTable(users);
       this.paginator._intl.itemsPerPageLabel = 'Rows per page';
       this.paginator._formFieldAppearance = "outline";
+      this.openDialog();
     });
   }
 

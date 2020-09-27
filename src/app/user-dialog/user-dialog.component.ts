@@ -6,6 +6,7 @@ import {
 } from '@angular/material/dialog';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { userModel } from '../userModel';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-user-dialog',
@@ -17,10 +18,15 @@ export class UserDialogComponent {
   roles: string[] = ['new boi', 'bro', 'big boi', 'old boi'];
   // Update/Save depending on the form function
   formAction: string;
+  //Is true if last validated email id already exists
+  emailExists: boolean;
+  //Last  validated email id
+  validatedEmail: string = '';
 
   constructor(
     public dialogRef: MatDialogRef<UserDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: userModel
+    @Inject(MAT_DIALOG_DATA) public data: userModel,
+    private userService: UserService
   ) {
     if (data._id) this.formAction = 'Update';
     else this.formAction = 'Save';
@@ -42,8 +48,17 @@ export class UserDialogComponent {
     role: new FormControl(this.data.role, [Validators.required]),
   });
 
-  //on Cancel Click
+  //Closes dialog on Cancel Click
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  //Handles Email duplicate validation
+  handleValidate(email = this.userForm.value.email): void {
+    this.validatedEmail = email;
+    this.userService.validateEmail(email).subscribe((res)=>{
+      this.emailExists = !res;
+      console.log(this.emailExists,this.validatedEmail)
+    })
   }
 }

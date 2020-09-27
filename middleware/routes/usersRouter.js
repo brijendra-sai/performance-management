@@ -2,6 +2,20 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/user");
 
+//Validates email address
+router.get("/validate/:email", async (req, res) => {
+  try {
+    const user = await User.find({email: req.params.email});
+    console.log(req.params.email,user)
+    const validation = (user.length === 0) ? true : false;
+    res.status(200).json(validation);
+  } catch (err) {
+    res.status(500).json({
+      message: err,
+    });
+  }
+});
+
 // Fetch all users
 router.get("/", async (req, res) => {
   try {

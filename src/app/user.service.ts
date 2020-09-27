@@ -13,6 +13,10 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
+  validateEmail(email: string){
+    return this.http.get<boolean>(`${this.apiUrl}/users/validate/${email}`)
+  }
+
   getUsersList() {
     return this.http.get<userModel[]>(`${this.apiUrl}/users`)    
   }
