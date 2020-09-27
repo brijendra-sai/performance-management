@@ -58,7 +58,6 @@ export class UserDialogComponent {
     this.validatedEmail = email;
     this.userService.validateEmail(email).subscribe((res)=>{
       this.emailExists = !res;
-      console.log(this.emailExists,this.validatedEmail)
     })
   }
 }
